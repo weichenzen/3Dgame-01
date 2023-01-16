@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KID
 {
     /// <summary>
-    /// 學習API：靜態 Static
+    /// 學習API：靜態 Static 已經儲存在電腦記憶體裡面的資料
     /// </summary>
 	public class LearnAPIStatic : MonoBehaviour
     {
@@ -36,6 +36,34 @@ namespace KID
 
 			float random = Random.Range(100f, 200f);
 			print($"<color=yellow>隨機值介於 100 與 200：{random}</Color>");
+		}
+
+		private void Start()
+		{
+			print($"<color=#3355ff>攝影機總數：{ Camera.allCamerasCount }</color>");
+			print($"<color=#3355ff>圓周率：{ Mathf.PI }</color>");
+
+			Physics.gravity = new Vector3(0, 10, 0);
+			print($"<color=#ff6666>地心引力：{ Physics.gravity }</color>");
+
+			Time.timeScale = 5;
+			print($"<color=#ff6666>時間尺寸：{ Time.timeScale }</color>");
+
+			Screen.brightness = 0.3f;
+			print($"<color=#ff6666>螢幕亮度：{ Screen.brightness }</color>");
+			// 輸出還會是 1 是正確的~
+
+			print($"<color=#66ff66>999 去小數點：{ Mathf.Floor(9.99f) }</color>");
+
+			Application.OpenURL("https://unity.com/");
+		}
+
+		private void Update()
+		{
+			// print($"<color=#3355ff>經過時間：{ Time.time }</color>");
+
+			bool space = Input.GetKey(KeyCode.Space);
+			print($"<color=#66ff66>玩家是否按下空白鍵：{ space }</color>");
 		}
 	}
 }
