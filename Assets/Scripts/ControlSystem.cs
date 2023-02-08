@@ -29,16 +29,23 @@ namespace KID
 		#region 事件
 		private void Awake()
 		{
-			StartCoroutine(ShootMarble());
+			//StartCoroutine(ShootMarble());
 		}
 
 		private void Update()
 		{
-
+			InputManager();
 		}
 		#endregion
 
 		#region 方法
+		private void InputManager()
+		{
+			if (Input.GetKeyDown(KeyCode.Mouse0))
+			{
+				print("按下左鍵");
+			}
+		}
 		/// <summary>
 		/// 發射彈珠
 		/// </summary>
