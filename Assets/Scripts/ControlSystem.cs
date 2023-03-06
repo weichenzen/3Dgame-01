@@ -41,9 +41,17 @@ namespace KID
 		#region 方法
 		private void InputManager()
 		{
-			if (Input.GetKeyDown(KeyCode.Mouse0))
+			if (Input.GetKeyDown(KeyCode.Mouse0))          // 如果 按下左鍵
 			{
 				print("按下左鍵");
+			}
+			else if (Input.GetKey(KeyCode.Mouse0))     // 如果 按住左鍵
+			{
+				print("<color=yellow>按住左鍵</color>");
+			}
+			else if (Input.GetKeyUp(KeyCode.Mouse0))     // 如果 放開左鍵
+			{
+				print("<color=red>放開左鍵</color>");
 			}
 		}
 		/// <summary>
